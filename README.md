@@ -25,3 +25,23 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+# Other tech used in this app
+- Angular Flex Layout & css flex layout
+- Angular Material
+
+# Quick Command - overview used in this application.
+
+- Install Angular Material:
+    - npm install @angular/material --save (append @<version.number> after material for different version as required)
+- Angular Material Dependency: (material makes use of cdk for it's components needs to be installed )
+    - npm install @angular/cdk --save
+- Angular Animations
+    - npm install @angular/animations --save
+- Flex - Layout
+    - npm install @angular/flex-layout --save
+- HammerJS
+    - npm install hammerjs --save (support for gesture)
+
+
+1. Make strict = false in tsconfig.json file in order to remove forcing of initailzation error.
