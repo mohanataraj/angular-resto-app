@@ -8,15 +8,15 @@ fxLayoutGap="10px"
 fxLayoutGap.xs="0">
 
     <div fxFlex="40">
-        <mat-card>
+        <mat-card *ngIf="dishMenu">
             <mat-card-header>
                 <mat-card-title>
-                    <h3>{{dish.name | uppercase}}</h3>
+                    <h3>{{dishMenu.name | uppercase}}</h3>
                 </mat-card-title>
              </mat-card-header>
-             <img mat-card-image src={{dish.image}} alt={{dish.name}}>
+             <img mat-card-image src={{dishMenu.image}} alt={{dishMenu.name}}>
                 <mat-card-content>
-                     <p>{{dish.description}}</p>
+                     <p>{{dishMenu.description}}</p>
                 </mat-card-content>
            <mat-card-actions>
                <button mat-button>LIKE</button>
@@ -26,10 +26,12 @@ fxLayoutGap.xs="0">
     </div>
 
     <div fxFlex="40">
-        <h3>Comments</h3>
-        <mat-list *ngIf="dish">
-            <mat-list *ngFor="let index of dish.comments">{{index.comment}} <br />{{index.rating}} <span>Stars</span> <br/> -- {{index.author}}
-        {{index.date | date}}</mat-list>
+        
+        <mat-list *ngIf="dishMenu">
+            <h3 matLine>Comments</h3> 
+
+            <mat-list-item *ngFor="let index of dishMenu.comments">
+                <p matLine>{{index.comment}}  </p><br/> <p matLine> {{index.rating}} <span>Stars</span> </p> <br/> <p matLine>-- {{index.author}} {{index.date | date}} </p></mat-list-item>
         </mat-list>
     </div>
 
